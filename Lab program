@@ -1,0 +1,108 @@
+1a) 
+name=input("Enter the name of the student:")
+USN=input("Enter the USN of the student:")
+subject1=int(input("Enter the marks of the subject1"))
+subject2=int(input("Enter the marks of the subject2"))
+subject3=int(input("Enter the marks of the subject3"))
+totalmarks=subject1+subject2+subject3
+percentage=(totalmarks*100)/300
+print("The student details are:")
+print("the name of the student is:",name)
+print("the USN of the student:",USN)
+print("The marks of subject1",str(subject1))
+print("The marks of subject2",str(subject2))
+print("The marks of subject3",str(subject3))
+print("totalmarks=",totalmarks)
+print("percentage=",percentage)
+
+1b) 
+from datetime import date
+name=input("enter the name of the person:")
+birth_year=int(input("enter birth year of a person:"))
+age=date.today().year-birth_year
+print("age of the person is",age)
+if(age>=60):
+    print("senior citizen")
+else:
+    print("not asenior citizen") 
+2a) 
+n=int(input("how many fib series to be generated?"))
+num1=0
+num2=1
+next_number=num1+num2
+count=0
+
+while count<=n:
+    print(next_number,end="")
+    count+=1
+    num1,num2=num2,next_number
+    next_number=num1+num2
+    print()
+
+2b) 
+def fact(n):
+    if(n==0):
+        return 1
+    else:
+        return (n*fact(n-1))
+n=int(input('enter the N:'))
+r=int(input('enter the R:'))
+ncr=fact(n)/(fact(n-r)*fact(r))
+print(ncr)
+
+
+3) 
+from math import sqrt
+n=int(input("enter the number of elements in the list:"))
+my_list=[]
+for i in range (n):
+    val=int(input("enter the number:"))
+    my_list.append(val)
+mean=sum(my_list)/len(my_list)
+total=0
+for element in my_list:
+     total+=(element-mean)*(element-mean)
+     variance=total/n
+     SD=sqrt(variance)
+print(f"mean of list is {mean}")
+print(f"variance of list is{variance}")
+print(f"standard deviation of list is {SD}")
+
+4) 
+n=input("enter a mutli-digit number:")
+d={}
+for ch in n:
+    if ch in d:
+        d[ch]+=1
+    else:
+         d[ch]=1
+print(d)
+
+5) import sys
+import string
+import os.path
+fname=input("enter the file name : ")
+if not os.path.isfile(fname):
+    print("the file",fname,"does not exist")
+    sys.exit(0)
+infile=open(fname,"r")
+filecontents=" "
+for line in infile:
+    for ch in line:
+        if ch not in string.punctuation:
+            filecontents=contents + ch
+        else:
+            filecontents=contents + ' '           
+wordfreq={}
+wordlist=filecontents.split()
+
+for word in wordlist:
+         if word not in wordfreq.keys():
+             wordfreq[word]=1 
+         else:
+              wordfreq[word]+1
+sortedWordFreq=sorted(wordFreq.item(),key=lambda x:x[1],reverse=True)
+for i in range(10):
+  print(sortedWordFreq[i][0],"occurs",sortedwordfreq[i][1],"times")
+6) 
+
